@@ -8,8 +8,8 @@ export default function App() {
     FetchBlob.config({
       trusty: true
     })
-    .fetch('POST', 'replace-with-a-self-signed-url')
-    .then(res => res.json())
+    .fetch('GET', 'https://self-signed.badssl.com/')
+    .then(res => res.text())
     .then(res => console.log(res))
     .catch(err => console.log(err))
   }
